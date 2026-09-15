@@ -446,17 +446,18 @@
                             class="category-card"
                             @click.prevent="selectCategory(category.id)"
                         > -->
-                            <span class="category-number">
+
+                            <!-- <span class="category-number">
                                 {{ String(index + 1).padStart(2, '0') }}
-                            </span>
+                            </span> -->
 
                             <h3>
                                 {{ category.name || 'Unnamed Category' }}
                             </h3>
 
-                            <p>
+                            <!-- <p>
                                 Browse products in this category.
-                            </p>
+                            </p> -->
                         </a>
                     </div>
                 </div>

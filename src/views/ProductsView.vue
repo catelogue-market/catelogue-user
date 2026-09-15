@@ -38,12 +38,12 @@
         updated_at: string
     }
 
-    type SpecKey =
-        | 'spec_1'
-        | 'spec_2'
-        | 'spec_3'
-        | 'spec_4'
-        | 'spec_5'
+    //type SpecKey =
+      //  | 'spec_1'
+      //  | 'spec_2'
+      //  | 'spec_3'
+      //  | 'spec_4'
+      //  | 'spec_5'
 
     const products = ref<Product[]>([])
     const categories = ref<Category[]>([])
@@ -61,14 +61,14 @@
     const sortBy = ref('default')
     const mobileMenuOpen = ref(false)
 
-    const API_BASE_URL = 'http://43.216.228.124:8080'
+    const API_BASE_URL = '/api'
 
     const fetchProducts = async () => {
         loading.value = true
         error.value = ''
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/products`)
+            const response = await fetch(`${API_BASE_URL}/products`)
 
             if (!response.ok) {
                 throw new Error('Failed to load products')
@@ -86,7 +86,7 @@
 
     const fetchCategories = async () => {
         try {
-            const response = await fetch(`${API_BASE_URL}/api/categories`)
+            const response = await fetch(`${API_BASE_URL}/categories`)
 
             if (!response.ok) {
                 throw new Error('Failed to load categories')
@@ -428,7 +428,7 @@
 
                     <div class="categories-grid">
                         <a
-                            v-for="(category, index) in categories"
+                            v-for="(category, _) in categories"
                             
                             :key="category.id"
                             href="#products"

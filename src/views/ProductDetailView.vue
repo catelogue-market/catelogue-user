@@ -37,7 +37,7 @@
     const error = ref('')
     const selectedImageIndex = ref(0)
 
-    const API_BASE_URL = 'http://43.216.228.124:8080'
+    const API_BASE_URL = '/api'
 
     const fetchProduct = async () => {
         loading.value = true
